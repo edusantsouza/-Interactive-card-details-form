@@ -33,22 +33,29 @@
       <form action="#" id="card-form">
         <label for="name">Cardholder Name</label>
         <input type="text" aria-att="Cardholder Name" placeholder="e.g. Jane Appleseed" class="inputName">
+        <small class="warning name">Can't be blank.</small>
 
         <label for="card-number">Card Number</label>
         <input placeholder="e.g. 1234 5678 9123 0000" class="inputNumber" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="16" aria-att="Card Number">
+        <small class="warning number">Can't be blank.</small>
 
         <div class="form-section">
           <div>
             <label for="exp-date" class="label">Exp. Date (MM/YY)</label>
-            <div class="exp-date">
-              <input placeholder="MM" class="inputMonth" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="2" aria-att="Month">
-              <input placeholder="YY" class="inputYear" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="2" aria-att="Year">
+            <div>
+              <div class="exp-date">
+                <input placeholder="MM" class="inputMonth" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="2" aria-att="Month">
+                <input placeholder="YY" class="inputYear" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="2" aria-att="Year">
+              </div>
+              <small class="warning month">Can't be blank.</small>
             </div>
+
           </div>
           <div>
             <label for="cvc">CVC</label>
-            <div>
+            <div class="cvc-box">
               <input placeholder="e.g. 123" class="inputCVC" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" aria-att="CVC">
+              <small class="warning cvc">Can't be blank.</small>
             </div>
           </div>
         </div>

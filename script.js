@@ -11,6 +11,8 @@ function getCardInfo() {
   const inputMonth = document.querySelector(".inputMonth");
   const inputYear = document.querySelector(".inputYear");
   const inputCVC = document.querySelector(".inputCVC");
+  const warning = document.querySelectorAll(".warning");
+  console.log(warning);
 
   const arrCardValues = [cardNumber, cardName, cardMonth, cardYear, cardCVC];
   const arrCardInputs = [
@@ -28,9 +30,22 @@ function getCardInfo() {
     } else {
       inputNumber.setAttribute("style", "border: 1px solid green");
     }
+    if (cardNumber.innerText === "") {
+      document.querySelector(".number").classList.add("visible");
+      inputNumber.setAttribute("style", "border: 1px solid red");
+    } else {
+      document.querySelector(".number").classList.remove("visible");
+    }
   });
   inputName.addEventListener("keyup", function (e) {
     cardName.innerHTML = e.target.value.toUpperCase();
+    if (cardName.innerText === "") {
+      document.querySelector(".name").classList.add("visible");
+      inputName.setAttribute("style", "border: 1px solid red");
+    } else {
+      document.querySelector(".name").classList.remove("visible");
+      inputName.setAttribute("style", "border: 1px solid green");
+    }
   });
   inputMonth.addEventListener("keyup", function (e) {
     cardMonth.innerHTML = e.target.value;
@@ -38,6 +53,12 @@ function getCardInfo() {
       inputMonth.setAttribute("style", "border: 1px solid red");
     } else {
       inputMonth.setAttribute("style", "border: 1px solid green");
+    }
+    if (cardMonth.innerText === "") {
+      document.querySelector(".month").classList.add("visible");
+      inputMonth.setAttribute("style", "border: 1px solid red");
+    } else {
+      document.querySelector(".month").classList.remove("visible");
     }
   });
   inputYear.addEventListener("keyup", function (e) {
@@ -47,6 +68,12 @@ function getCardInfo() {
     } else {
       inputYear.setAttribute("style", "border: 1px solid green");
     }
+    if (cardYear.innerText === "") {
+      document.querySelector(".month").classList.add("visible");
+      inputYear.setAttribute("style", "border: 1px solid red");
+    } else {
+      document.querySelector(".month").classList.remove("visible");
+    }
   });
   inputCVC.addEventListener("keyup", function (e) {
     cardCVC.innerHTML = e.target.value;
@@ -55,21 +82,55 @@ function getCardInfo() {
     } else {
       inputCVC.setAttribute("style", "border: 1px solid green");
     }
+    if (cardCVC.innerText === "") {
+      document.querySelector(".cvc").classList.add("visible");
+      inputCVC.setAttribute("style", "border: 1px solid red");
+    } else {
+      document.querySelector(".cvc").classList.remove("visible");
+    }
   });
 
   cardForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    arrCardValues.forEach((item) => {
-      //  if (item.getAttribute(s) === "") {
-      //  alert(`Você não preencheu o ${item} corretamente`);
-      // }
-      console.log(item.getAttribute("style"));
-    });
     arrCardInputs.forEach((item) => {
       if (item.value === "") {
-        alert(`You didn't fill the ${item.getAttribute("aria-att")} field!`);
+        // alert(`You didn't fill the ${item.getAttribute("aria-att")} field!`);
+        switch (item.getAttribute("aria-att")) {
+          case "Cardholder Name":
+            document.querySelector(".name").classList.add("visible");
+            item.setAttribute("style", "border: 1px solid red");
+
+            break;
+          case "Card Number":
+            document.querySelector(".number").classList.add("visible");
+            item.setAttribute("style", "border: 1px solid red");
+
+            break;
+          case "Month":
+            document.querySelector(".month").classList.add("visible");
+            item.setAttribute("style", "border: 1px solid red");
+
+            break;
+          case "Year":
+            document.querySelector(".month").classList.add("visible");
+            item.setAttribute("style", "border: 1px solid red");
+
+          case "CVC":
+            document.querySelector(".cvc").classList.add("visible");
+            item.setAttribute("style", "border: 1px solid red");
+
+            break;
+          default:
+            console.log(`Tudo certo"`);
+        }
       }
     });
+    if (cardNumber.innerText.length < 16) {
+      inputNumber.setAttribute("style", "border: 1px solid red");
+      document.querySelector(".number").innerText =
+        "You need to fill this field with 16 caracteres!";
+      document.querySelector(".number").classList.add("visible");
+    }
   });
 }
 

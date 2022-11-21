@@ -32,7 +32,7 @@ section::before{
   background-image: linear-gradient(to top right, hsl(270, 28%, 57%), hsl(279, 45%, 30%),  hsl(278, 68%, 11%));
 }
 section{
-  background: rgb(253, 253, 253);
+  background: #fff;
   height: 100vh;
   display: flex;
   /* width: 1400px;
@@ -74,6 +74,8 @@ input:focus{
   border-image-slice: 1;
 }
 input[type=submit]{
+    margin-top: 2rem;
+
   background-color: hsl(278, 68%, 11%);
   color: #fff;
   cursor: pointer;
@@ -100,7 +102,7 @@ opacity: .8;
     width: 80px;
     margin-right:10px ;
     margin-top: .5rem;
-    margin-bottom: 2rem;
+    margin-bottom:-5px;
   
   }
   
@@ -108,7 +110,6 @@ opacity: .8;
     width: 140px;
     margin-right:10px ;
     margin-top: .5rem;
-    margin-bottom: 2rem;
   }
 
   .gradiente {
@@ -168,7 +169,23 @@ opacity: .8;
   left: -220px;
   color: #fff;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
 
+.warning {
+  color: red;
+  margin-top: -10px;
+  margin-left: .5rem;
+  font-size: 1rem;
+  visibility: hidden;
+}
+
+.visible{
+  visibility: visible;
+}
+
+.cvc-box{
+  display: flex;
+  flex-direction: column;
 }
 
 
