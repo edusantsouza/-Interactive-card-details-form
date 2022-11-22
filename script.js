@@ -1,8 +1,8 @@
-function getCardInfo() {
+(function getCardInfo() {
   const cardForm = document.getElementById("card-form");
 
   const formRender = document.querySelector(".form-container");
-  const thanksRender = document.querySelector(".absolute");
+  const thanksRender = document.querySelector(".sucess-screen");
   const btnContinue = document.querySelector(".btn");
 
   const cardNumber = document.getElementById("card-number");
@@ -15,10 +15,7 @@ function getCardInfo() {
   const inputMonth = document.querySelector(".inputMonth");
   const inputYear = document.querySelector(".inputYear");
   const inputCVC = document.querySelector(".inputCVC");
-  const warning = document.querySelectorAll(".warning");
-  console.log(warning);
 
-  const arrCardValues = [cardNumber, cardName, cardMonth, cardYear, cardCVC];
   const arrCardInputs = [
     inputNumber,
     inputName,
@@ -69,6 +66,8 @@ function getCardInfo() {
     cardYear.innerHTML = e.target.value;
     if (cardYear.innerText < 22 || cardYear.innerText > 30) {
       inputYear.setAttribute("style", "border: 1px solid red");
+      document.querySelector(".month").innerText = "Invalid date!";
+      document.querySelector(".month").classList.add("visible");
     } else {
       inputYear.setAttribute("style", "border: 1px solid green");
     }
@@ -95,15 +94,13 @@ function getCardInfo() {
   });
 
   btnContinue.addEventListener("click", function () {
-    thanksRender.classList.remove("visible");
-    formRender.classList.add("visible");
+    location.reload();
   });
 
   cardForm.addEventListener("submit", function (e) {
     e.preventDefault();
     arrCardInputs.forEach((item) => {
       if (item.value === "") {
-        // alert(`You didn't fill the ${item.getAttribute("aria-att")} field!`);
         switch (item.getAttribute("aria-att")) {
           case "Cardholder Name":
             document.querySelector(".name").classList.add("visible");
@@ -130,11 +127,8 @@ function getCardInfo() {
 
             break;
           default:
-            console.log(`Tudo certo"`);
+            console.log(`ok`);
         }
-      } else {
-        formRender.classList.remove("visible");
-        thanksRender.classList.add("visible");
       }
     });
     if (cardNumber.innerText.length < 16) {
@@ -142,8 +136,9 @@ function getCardInfo() {
       document.querySelector(".number").innerText =
         "You need to fill this field with 16 caracteres!";
       document.querySelector(".number").classList.add("visible");
+    } else {
+      formRender.classList.remove("visible");
+      thanksRender.classList.add("visible");
     }
   });
-}
-
-getCardInfo();
+})();
