@@ -1,6 +1,10 @@
 function getCardInfo() {
   const cardForm = document.getElementById("card-form");
 
+  const formRender = document.querySelector(".form-container");
+  const thanksRender = document.querySelector(".absolute");
+  const btnContinue = document.querySelector(".btn");
+
   const cardNumber = document.getElementById("card-number");
   const cardName = document.getElementById("card-name");
   const cardMonth = document.getElementById("card-month");
@@ -90,6 +94,11 @@ function getCardInfo() {
     }
   });
 
+  btnContinue.addEventListener("click", function () {
+    thanksRender.classList.remove("visible");
+    formRender.classList.add("visible");
+  });
+
   cardForm.addEventListener("submit", function (e) {
     e.preventDefault();
     arrCardInputs.forEach((item) => {
@@ -123,6 +132,9 @@ function getCardInfo() {
           default:
             console.log(`Tudo certo"`);
         }
+      } else {
+        formRender.classList.remove("visible");
+        thanksRender.classList.add("visible");
       }
     });
     if (cardNumber.innerText.length < 16) {

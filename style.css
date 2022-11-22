@@ -10,7 +10,6 @@
 
 }
 body {
-  max-height: 300px;
   font-size: 1.6rem;
 }
 .attribution {
@@ -25,18 +24,13 @@ body {
 
 }
 /**************************************************/
-section::before{
-  content: '';
-  height: 100vh;
-  width: 33%;
-  background-image: linear-gradient(to top right, hsl(270, 28%, 57%), hsl(279, 45%, 30%),  hsl(278, 68%, 11%));
-}
+
 section{
   background: #fff;
   height: 100vh;
-  display: flex;
-  /* width: 1400px;
-  margin: 0 auto; */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
 }
 form {
   display: flex;
@@ -87,6 +81,9 @@ opacity: .8;
  .form-container {
   margin: 0 auto;
   margin-block: auto;
+  visibility: hidden;
+  grid-column: 7/11;
+
   }
   
   .form-section {
@@ -113,8 +110,15 @@ opacity: .8;
   }
 
   .gradiente {
-  width: 200px;
+  background-image: linear-gradient(to top right, hsl(270, 28%, 57%), hsl(279, 45%, 30%),  hsl(278, 68%, 11%));
+  grid-column: 1/5;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
   position: relative;
+ 
 }
 
   .front-card {
@@ -125,11 +129,11 @@ opacity: .8;
   width: 380px;
   height: 200px;
   border-radius:10px ;
-  position: absolute;
-  top: 20rem;
-  left: -280px;
   color: #fff;
-  margin-left: 2rem;
+  grid-column: 3/5;
+  position: absolute;
+  top: 18rem;
+  right: -10rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -165,8 +169,9 @@ opacity: .8;
   height: 200px;
   border-radius:10px ;
   position: absolute;
-  top: 43rem;
-  left: -220px;
+  top: 40rem;
+  right: -15rem;
+  grid-column:3/5 ;
   color: #fff;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
@@ -179,16 +184,61 @@ opacity: .8;
   visibility: hidden;
 }
 
-.visible{
-  visibility: visible;
-}
+
 
 .cvc-box{
   display: flex;
   flex-direction: column;
 }
 
+.absolute{
+  visibility: hidden;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ grid-template-rows: repeat(3, 1fr);
+}
 
 
 
+.sucess-screen{
+grid-column: 7/11;
+grid-row: 2/3;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
+}
 
+.sucess-screen p {
+  color: grey;
+}
+
+.sucess-screen button {
+  margin-top: 1.5rem;
+  width: 25rem;
+  height: 4rem;
+  background-color: hsl(278, 68%, 11%);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: .5rem;
+  letter-spacing: .5px;
+}
+
+.sucess-screen button:hover {
+  opacity: .8;
+}
+
+
+.sucess-screen img {
+  width: 100px;
+}
+
+
+
+.visible{
+  visibility: visible;
+}
