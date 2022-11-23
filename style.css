@@ -117,9 +117,11 @@ input[type="submit"]:hover {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 220px 220px 1fr;
   justify-content: center;
   align-items: center;
   position: relative;
+  left: -20rem;
 } 
 
 .front-card {
@@ -135,8 +137,11 @@ input[type="submit"]:hover {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-
+  grid-column: 3/4;
+  grid-row: 3/4;
+  margin-left: 40px;
   z-index: 9999;
+  position: absolute;
 }
 .back-card {
   background-image: url(./images/bg-card-back.png);
@@ -151,9 +156,9 @@ input[type="submit"]:hover {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  top: 5rem;
+  grid-column: 3/4;
+  grid-row: 2/3;
   position: absolute;
-
 }
 
 .front-card div {
@@ -188,7 +193,6 @@ input[type="submit"]:hover {
   display: flex;
   flex-direction: column;
 }
-
 
   .absolute {
     visibility: hidden;
@@ -237,14 +241,14 @@ input[type="submit"]:hover {
 @media (max-width: 900px) {
   body { display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr  150px;
+    grid-template-rows: 1fr 150px ;
 
   }
   section {
    display: grid;
    grid-template-columns: 1fr;
    grid-template-rows: 400px 600px;
-
+ position: relative;
   }
   input {
     margin-bottom: 1.2rem;
@@ -256,6 +260,7 @@ input[type="submit"]:hover {
     transition: 0.5s;
     outline: none;
   }
+  
   .inputCVC {
     width: 120px;
     margin-right: 10px;
@@ -282,6 +287,8 @@ input[type="submit"]:hover {
    grid-template-rows: repeat(5, 1fr);
    grid-column: auto;
    grid-row: 1/2;
+   position: initial;
+   left: 0;
   }
   .form-container {
     margin: 0 auto;
@@ -320,7 +327,7 @@ input[type="submit"]:hover {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    top: 6rem;
+    top: -28rem;
     position: absolute;
     margin-left: 3rem;
 
