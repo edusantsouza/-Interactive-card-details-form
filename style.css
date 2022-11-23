@@ -120,25 +120,40 @@ input[type="submit"]:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-}
+} 
 
 .front-card {
   background-image: url(./images/bg-card-front.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   width: 380px;
   height: 200px;
   border-radius: 10px;
   color: #fff;
-  grid-column: 3/5;
-  position: absolute;
-  top: 18rem;
-  right: -10rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
+
+  z-index: 9999;
+}
+.back-card {
+  background-image: url(./images/bg-card-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  width: 380px;
+  height: 200px;
+  border-radius: 10px;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  top: 5rem;
+  position: absolute;
+
 }
 
 .front-card div {
@@ -159,22 +174,6 @@ input[type="submit"]:hover {
   position: absolute;
   right: 5rem;
   top: 8.8rem;
-}
-
-.back-card {
-  background-image: url(./images/bg-card-back.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 380px;
-  height: 200px;
-  border-radius: 10px;
-  position: absolute;
-  top: 40rem;
-  right: -15rem;
-  grid-column: 3/5;
-  color: #fff;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 .warning {
@@ -235,20 +234,32 @@ input[type="submit"]:hover {
 
 /**************************************  mobile *******************************************/
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
+  body { display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr  150px;
+
+  }
   section {
-    display: flex;
-    flex-direction: column;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 400px 600px;
+
   }
   input {
     margin-bottom: 1.2rem;
     padding: 5px;
-    width: 320px;
+    width: 300px;
     height: 40px;
     border: 1px solid rgba(128, 128, 128, 0.4);
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+  }
+  .inputCVC {
+    width: 120px;
+    margin-right: 10px;
+    margin-top: 0.5rem;
   }
   .exp-date > input {
     width: 65px;
@@ -263,51 +274,64 @@ input[type="submit"]:hover {
       hsl(279, 45%, 30%),
       hsl(278, 68%, 11%)
     );
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+   display: grid;
+   grid-template-columns: 1fr;
+   height: auto;
+   align-content: center;
+   justify-items: center;
+   grid-template-rows: repeat(5, 1fr);
+   grid-column: auto;
+   grid-row: 1/2;
   }
   .form-container {
     margin: 0 auto;
     margin-block: auto;
     margin-top: 10rem;
+    grid-column: auto;
+    grid-row: 2/3;
   }
   .front-card {
     background-image: url(./images/bg-card-front.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 340px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    width: 290px;
     height: 180px;
     border-radius: 10px;
     color: #fff;
-    top: 10rem;
-    right: 2rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 999;
+    grid-row: 4/6;
+    z-index: 9999;
+    margin-right: 3rem;
   }
   .back-card {
     background-image: url(./images/bg-card-back.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 340px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    width: 290px;
     height: 180px;
     border-radius: 10px;
     color: #fff;
-    top: 7rem;
-    right: 6rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    top: 6rem;
     position: absolute;
+    margin-left: 3rem;
+
+  }
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    background-color: rgb(11, 11, 11);
+    color: #fff;
+    height: auto;
+    grid-row: 3/4;
   }
   #card-number {
     font-size: 2rem;
@@ -318,15 +342,23 @@ input[type="submit"]:hover {
     right: 5rem;
     top: 7.8rem;
   }
-  .sucess-screen {
+  .absolute {
     visibility: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .sucess-screen {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 25%;
+    grid-row: 3/4;
+    grid-column: 4/10;
+
   }
   .sucess-screen p {
     color: grey;
