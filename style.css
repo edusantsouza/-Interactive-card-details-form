@@ -20,6 +20,10 @@ body {
 .attribution a {
   text-decoration: none;
   color: rgb(203, 137, 55);
+  transition: .5s;
+}
+.attribution a:hover {
+  color: rgb(37, 195, 90);
 }
 /**************************************************/
 
@@ -186,8 +190,9 @@ input[type="submit"]:hover {
   flex-direction: column;
 }
 
-@media screen and (min-width: 900px) {
+
   .absolute {
+    visibility: hidden;
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -196,7 +201,6 @@ input[type="submit"]:hover {
     grid-template-rows: repeat(3, 1fr);
   }
   .sucess-screen {
-    visibility: hidden;
     grid-column: 7/11;
     grid-row: 2/3;
     display: flex;
@@ -228,7 +232,6 @@ input[type="submit"]:hover {
   .sucess-screen img {
     width: 100px;
   }
-}
 
 /**************************************  mobile *******************************************/
 
@@ -236,6 +239,22 @@ input[type="submit"]:hover {
   section {
     display: flex;
     flex-direction: column;
+  }
+  input {
+    margin-bottom: 1.2rem;
+    padding: 5px;
+    width: 320px;
+    height: 40px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  .exp-date > input {
+    width: 65px;
+    margin-right: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: -5px;
   }
   .gradiente {
     background-image: linear-gradient(
@@ -260,8 +279,8 @@ input[type="submit"]:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 380px;
-    height: 200px;
+    width: 340px;
+    height: 180px;
     border-radius: 10px;
     color: #fff;
     top: 10rem;
@@ -278,19 +297,27 @@ input[type="submit"]:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 380px;
-    height: 200px;
+    width: 340px;
+    height: 180px;
     border-radius: 10px;
     color: #fff;
-    top: 5rem;
-    right: 2rem;
+    top: 7rem;
+    right: 6rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     position: absolute;
   }
-
+  #card-number {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  #card-cvc {
+    position: absolute;
+    right: 5rem;
+    top: 7.8rem;
+  }
   .sucess-screen {
     visibility: hidden;
     display: flex;
