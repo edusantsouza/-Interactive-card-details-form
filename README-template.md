@@ -1,22 +1,22 @@
 # Frontend Mentor - Interactive card details form solution
 
-This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). 
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Interactive card details form solution](#frontend-mentor---interactive-card-details-form-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -27,28 +27,23 @@ Users should be able to:
 - Fill in the form and see the card details update in real-time
 - Receive error messages when the form is submitted if:
   - Any input field is empty
-  - The card number, expiry date, or CVC fields are in the wrong format
+  <!-- - The card number, expiry date, or CVC fields are in the wrong format -->
 - View the optimal layout depending on their device's screen size
 - See hover, active, and focus states for interactive elements on the page
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Project Landing Page](./screenshots/LandingPage-CreditCardDetails.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: []
+- Live Site URL: [Interactive Card Details - Deployment](https://interactive-card-details-form-plum.vercel.app/)
 
 ## My process
+
+My experience was pretty good developing this challenge. All about this project taught me something and, believe me, I really had to learn some hard contents (at least for me) to accomplish this task. I wish I could say that was easy. But it wasn't. And I will talk a bit about this process further ahead.
 
 ### Built with
 
@@ -56,60 +51,35 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Media queries
+- Javascript for DOM Manipulation
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+It is a simple project in a first look, but, when you stop and think about all the details the application must attend, so you realize that its a high challenge. So I put myself to work on it and spent a bunch of hours practicing concepts that I already "learn", but I've never applied before. I could understand:
 
-To see how you can add code snippets, see below:
+  - How the eventlisteners works on input fields;
+  - I was able to apply diferents iterations methods and this help a lot to validate some infos from user side; and
+  - DOM manipulating was far the most important thing to understand when passing input values to the side card on page.
+   
+  With these tools I could finish the project and learned better by practicing .
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Well, I can easy say that in this project I struggled a lot with CSS positioning properties. Seriously, that makes me realize how bad I am on that. Or I was(spoiler alert: I had to learn it to finish the challenge). Actually,  I read and watched a ton of classes about it but never really practiced positioning. It could seems foolish, but that was the struggle I had to go through to show me where I can get better and now I really know. Its my main objective from now on and you can see my progress very soon in another project.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [CSS Grid by Wes Bos](https://cssgrid.io/) - This video series helped me a lot when I was struggling with positioning elements on the screen.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Github - [Eduardo Souza - Github Profile](https://github.com/edusantsouza)
+- Frontend Mentor - [@edusantsouza](https://www.frontendmentor.io/profile/edusantsouza)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
