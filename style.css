@@ -124,8 +124,8 @@ input[type="submit"]:hover {
   left: -20rem;
 } 
 
-.front-card {
-  background-image: url(./images/bg-card-front.png);
+.back-card{
+  background-image: url(./images/bg-card-back.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -143,8 +143,8 @@ input[type="submit"]:hover {
   z-index: 9999;
   position: absolute;
 }
-.back-card {
-  background-image: url(./images/bg-card-back.png);
+.front-card  {
+  background-image: url(./images/bg-card-front.png) ;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -311,7 +311,7 @@ input[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     grid-row: 4/6;
-    z-index: 9999;
+    z-index: 2;
     margin-right: 3rem;
   }
   .back-card {
@@ -327,10 +327,10 @@ input[type="submit"]:hover {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    top: -28rem;
+    top:5;
     position: absolute;
     margin-left: 3rem;
-
+    z-index: 1;
   }
   .attribution {
     font-size: 11px;
